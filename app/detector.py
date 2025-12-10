@@ -6,15 +6,13 @@ from app.alert import send_alert
 
 fall_model = YOLO("models/fall_model.pt")
 fire_model = YOLO("models/fire_model.pt")
-#accident_model = YOLO("models/accident_model.pt")
-#suspicious_model = YOLO("models/suspicious_model.pt")
+
 
 def detect_objects(frame):
     results = {
         "fall": fall_model(frame)[0],
         "fire": fire_model(frame)[0],
-        #"accident": accident_model(frame)[0],
-       # "suspicious": suspicious_model(frame)[0]
+        
     }
     return results
 
